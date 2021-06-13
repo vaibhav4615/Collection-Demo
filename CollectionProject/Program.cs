@@ -8,27 +8,34 @@ namespace CollectionProject
     {
         static void Main(string[] args)
         {
+            List<string> Emp = new() { "Dao", "Jane", "Best", "Friend", "Home", "Test", "Data", "Samrp", "Garuj" };
 
-
-            List<string> Emp = new();
-            Emp.Add("Da");
-            Emp.Add("Jane");
-            Emp.Add("Best");
-            Emp.Add("Friend");
-            Emp.Add("Home");
-            Emp.Add("Test");
-            Emp.Add("Data");
-            Emp.Add("Samrp");
-            Emp.Add("Garuj");
-            Emp.Add("paujn");
-
-            //Find one item
+            //Get first match elements
             string ab = Emp.Find(f => f.Equals("Jane"));
 
-            //Find multiple Item
+            //Get All matches elements
             List<string> a = Emp.FindAll(f => f.Equals("Jane"));
 
-            Console.WriteLine(a);
+            //Get Count
+            int count = Emp.Count;
+
+
+            //Check element is exist or not
+            bool isexists = Emp.Contains("Jane");
+
+            //ForEach
+            Emp.ForEach( e => {
+                Console.WriteLine(e);
+            });
+
+            bool checkMultiple = Emp.Exists(e => e.Contains("Jane"));
+
+            //Remove one element
+            Emp.Remove("Jane");
+
+            // Remove All elements
+             Emp.Clear();
+
             Console.ReadLine();
         }
     }
